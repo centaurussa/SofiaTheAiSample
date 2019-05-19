@@ -85,7 +85,7 @@ def main():
     # If all set, launch Sofia
     if _satisfied == 1:
         goSofia()
-    # If not, infrom the user with the missing dependencies
+    # If not, inform the user with the missing dependencies
     elif _satisfied == 0 and len(notInstalled) >= 1:
         import os
         os.system('cls' if os.name == "nt" else "clear")
