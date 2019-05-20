@@ -21,6 +21,7 @@ def goSofia():
                               # then said _i is a source of voice input
 
                 sf.clearer()  # Clear the screen
+                print("Listening...")
                 sf.cacheClearer()  # Clear the past session's data
                 while 1:  # Keep listening
 
@@ -38,7 +39,6 @@ def goSofia():
 
                     # Exit from Listening loop if session ended
                     except SystemExit:
-
                         _breaker = 1  # End the main loop
                         break  # Break listening loop
 
@@ -46,13 +46,21 @@ def goSofia():
                     except sr.UnknownValueError:
                         print("Sorry I didn't hear that. Can you repeat that?")
                     except Exception as e:
-                        printe(e)
+                        print(e)
 
         # Inform the user if the device at index of '_i' was not found
-        except Exception:
-            print((f"No voice input device found at 'device_index={_i}',"
-            " trying another one."))
+        except AssertionError:
+            print(f"Device at device_index={_i} was not found, trying another one.")
             sleep(3)
+
+        # Check if Sofia already running in another window
+        except OSError as e:
+            if e.errno == -9998:
+                sf.clearer()
+                print("Sofia already running.")
+                break
+            else:
+                print(e)
 
         if _breaker == 1:
             break

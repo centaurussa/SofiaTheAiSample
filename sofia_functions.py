@@ -1,14 +1,25 @@
 import os
+
 from gtts import gTTS  # Google's Text to Speech
 import pyttsx3
-
+from platform import system
 
 # Clears the window
+def linkOpener():
+    '''Find what command used to open a link from terminal'''
+
+    if system() == "Windows":
+        return "start"
+    elif system() == "Darwin":
+        return "open"
+    else:
+        return "xdg-open"
+
+
 def clearer():
     '''Clears the CLI'''
 
     os.system("cls" if os.name == "nt" else "clear")
-    print("Listening...\n")
 
 
 def cacheClearer():
@@ -78,3 +89,4 @@ def say2(lines):
     engine.say(lines)
     engine.runAndWait()
     clearer()
+    print("Listening...")

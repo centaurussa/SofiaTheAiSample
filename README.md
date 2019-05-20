@@ -1,5 +1,7 @@
 A ready sample of **`SofiaTheAI`** that can be used to understand the inputted voice and act and respond upon it.
 
+*NOTE: Refer to responder.py to add more if-else statements to increase the control and functionality of Sofia to fit your needs*
+
 # How to launch the sample
 **`cd`** to the sample's root directory and write in the Command Line Interface(a.k.a Terminal) the following line:-
 
@@ -34,6 +36,14 @@ In order to change the outputted voice you can do the following:-
 
 Voice output: Some response...
 
-`Voice input: What's your name? / Who are you?..`
+`Voice input: What's your name? / Who are you?`
+
+Voice output: Some response...
+
+`Voice input: Open the browser`
+
+Voice output: Some response...
+
+`Voice input: Open Facebook / YouTube / Google / GitHub`
 
 Voice output: Some response...
