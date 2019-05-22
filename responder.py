@@ -18,7 +18,7 @@ def responder(text, say, clearer):
     ]
 
     # Check if user greeted me with a keyword I might understand
-    if any(match in s_text for match in inputOutputData[0][1:]):
+    if any(match in s_text for match in inputOutputData[0][1:]) and all([i not in s_text for i in ["search", "find"]]):
         # Greet randomly
         say(f"{choice(inputOutputData[0][1:]).title()}. {choice(inputOutputData[1][1:])}")
 
