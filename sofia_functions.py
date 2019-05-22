@@ -4,17 +4,6 @@ from gtts import gTTS  # Google's Text to Speech
 import pyttsx3
 from platform import system
 
-# Clears the window
-def linkOpener():
-    '''Find what command used to open a link from terminal'''
-
-    if system() == "Windows":
-        return "start"
-    elif system() == "Darwin":
-        return "open"
-    else:
-        return "xdg-open"
-
 
 def clearer():
     '''Clears the CLI'''
@@ -22,7 +11,7 @@ def clearer():
     os.system("cls" if os.name == "nt" else "clear")
 
 
-def cacheClearer():
+def cache_clearer():
     '''Removes past session\'s activity'''
 
     try:
@@ -50,7 +39,7 @@ def say1(lines):
         while pygame.mixer.music.get_busy():
             sleep(1)
 
-        cacheClearer()
+        cache_clearer()
 
     else:
         import pygame
@@ -68,7 +57,7 @@ def say1(lines):
             pygame.event.poll()
             clock.tick(10)
 
-        cacheClearer()
+        cache_clearer()
 
 
 # Use pyttsx3's offline Text to Speech

@@ -22,7 +22,7 @@ def goSofia():
 
                 sf.clearer()  # Clear the screen
                 print("Listening...")
-                sf.cacheClearer()  # Clear the past session's data
+                sf.cache_clearer()  # Clear the past session's data
                 while 1:  # Keep listening
 
                     # Filter noise
@@ -69,7 +69,7 @@ def goSofia():
         if _worked is None:
             _i += 1
 
-    sf.cacheClearer()
+    sf.cache_clearer()
 
 
 def main():
